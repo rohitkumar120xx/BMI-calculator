@@ -1,0 +1,577 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #212121;
+}
+
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+
+/* =========================
+   LEFT INFORMATION SECTION
+========================= */
+
+.container {
+  width: 42%;
+  min-height: 650px;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.heading {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #2563eb;
+}
+
+.heading span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.heading p {
+  margin-top: 15px;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #444444;
+}
+
+
+/* =========================
+   FORMULA
+========================= */
+
+.formula {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.formula p {
+  margin-top: 12px;
+
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: #444444;
+}
+
+.formula p span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+
+  color: #111111;
+}
+
+
+/* =========================
+   BMI CLASSIFICATION IMAGE
+========================= */
+
+.image {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+.image img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+
+  display: block;
+
+  border-radius: 10px;
+}
+
+
+/* =========================
+   RIGHT FORM
+========================= */
+
+form {
+  width: 50%;
+  min-height: 650px;
+
+  padding: 40px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #292929;
+
+  border-radius: 16px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   FORM HEADER
+========================= */
+
+.header {
+  margin-bottom: 30px;
+
+  font-size: 27px;
+  font-weight: 600;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+
+/* =========================
+   INPUT FORM
+========================= */
+
+.input-form {
+  width: min(100%, 430px);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+
+  color: #ffffff;
+}
+
+.input-form label {
+  margin-bottom: 8px;
+
+  font-size: 17px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+  width: 100%;
+  height: 48px;
+
+  margin-bottom: 22px;
+  padding: 10px 14px;
+
+  font-size: 16px;
+
+  color: #222222;
+  background: #ffffff;
+
+  border: 2px solid transparent;
+  border-radius: 8px;
+
+  outline: none;
+
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #888888;
+}
+
+input:focus {
+  border-color: #f2796e;
+
+  box-shadow: 0 0 0 3px rgba(242, 121, 110, 0.15);
+}
+
+
+/* =========================
+   CALCULATE BUTTON
+========================= */
+
+button {
+  width: 100%;
+  height: 50px;
+
+  margin-top: 5px;
+  padding: 10px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: #ffffff;
+  background: #16a34a;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background: #15803d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(22, 163, 74, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   OUTPUT
+========================= */
+
+.output {
+  width: 100%;
+
+  margin-top: 25px;
+
+  display: none;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   RESULT TEXT
+========================= */
+
+.result {
+  width: 100%;
+  max-width: 450px;
+
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.5;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   BMI POINTER / METER
+========================= */
+
+.bmi-pointer {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.bmi-index {
+  width: 100%;
+  max-width: 500px;
+
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================
+   POINTER
+========================= */
+
+.pointer {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  width: 5px;
+  height: 150px;
+
+  background: #ffffff;
+
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: bottom center;
+
+  border-radius: 5px;
+
+  transition: transform 0.6s ease;
+}
+
+
+/* Pointer Circle */
+
+.pointer::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -10px;
+
+  width: 20px;
+  height: 20px;
+
+  transform: translateX(-50%);
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+
+/* Pointer Arrow */
+
+.pointer::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: -18px;
+
+  transform: translateX(-50%);
+
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #ffffff;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+  .main-container {
+    gap: 20px;
+  }
+
+  .container {
+    width: 45%;
+    padding: 20px;
+  }
+
+  form {
+    width: 55%;
+    padding: 30px 20px;
+  }
+
+  .heading span {
+    font-size: 27px;
+  }
+
+  .heading p,
+  .formula p {
+    font-size: 16px;
+  }
+
+  .header {
+    font-size: 23px;
+  }
+
+  .pointer {
+    height: 120px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-container {
+    min-height: auto;
+
+    padding: 15px;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .container,
+  form {
+    width: 100%;
+  }
+
+  .container {
+    min-height: auto;
+
+    padding: 20px;
+  }
+
+  form {
+    min-height: auto;
+
+    padding: 30px 20px;
+  }
+
+  .heading span {
+    font-size: 26px;
+  }
+
+  .heading p,
+  .formula p {
+    font-size: 16px;
+  }
+
+  .formula {
+    margin-top: 25px;
+  }
+
+  .image {
+    margin-top: 25px;
+  }
+
+  .header {
+    font-size: 23px;
+  }
+
+  .input-form {
+    width: 100%;
+  }
+
+  .output {
+    margin-top: 25px;
+  }
+
+  .result {
+    font-size: 19px;
+  }
+
+  .pointer {
+    height: 100px;
+  }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .main-container {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  form {
+    padding: 25px 15px;
+    border-radius: 12px;
+  }
+
+  .heading {
+    font-size: 17px;
+  }
+
+  .heading span {
+    font-size: 23px;
+  }
+
+  .heading p,
+  .formula p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .formula p span {
+    font-size: 16px;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+
+  input {
+    height: 45px;
+  }
+
+  button {
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .result {
+    font-size: 17px;
+  }
+
+  .pointer {
+    height: 70px;
+  }
+}
